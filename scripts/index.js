@@ -36,7 +36,7 @@ function addToTimeline(albumInfos) {
         container.setAttribute("class", "container");
         container.classList.add(timeline.childNodes.length % 2 === 0 ? "left" : "right");
         container.onclick = function() { openAlbum(albumInfo); };
-        const content = document.createElement("DIV")
+        const content = document.createElement("DIV");
         content.setAttribute("class", "content");
         const contentHeading = document.createElement("H2");
         contentHeading.innerHTML = albumInfo.title;
@@ -50,6 +50,10 @@ function addToTimeline(albumInfos) {
 }
 function openAlbum(albumInfo) {
     console.log(albumInfo.id);
+    document.getElementById("album").style.width = "100%";
+}
+function returnToGallery() {
+    document.getElementById("album").style.width = "0";
 }
 const callback = function(response) {
   console.log(response);
