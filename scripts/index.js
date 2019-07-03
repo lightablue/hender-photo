@@ -12,6 +12,15 @@ const albumPage = "pa.asp";
 const albumParam = "mainid";
 const photoPage = "pt_show.asp";
 const photoParam = "pt_id";
+function getUrl(encodedUri) {
+    return `http://www.whateverorigin.org/get?url=${encodedUri}&callback=?`;
+}
+function parseToBody(response) {
+  /* console.log(response);
+  console.log(response.contents); */
+  const parser = new DOMParser();
+  return parser.parseFromString(response.contents, response.status.content_type).body;
+}
 function parseToAlbumInfo(row) {
     const columns = row.querySelectorAll('td');
     const anchor = columns[0].querySelector(`a[href^='${albumPage}?${albumParam}=']`);
@@ -44,15 +53,6 @@ function addToTimeline(albumInfos) {
         container.appendChild(content);
         timeline.appendChild(container);
     });
-}
-function getUrl(encodedUri) {
-    return `http://www.whateverorigin.org/get?url=${encodedUri}&callback=?`;
-}
-function parseToBody(response) {
-  /* console.log(response);
-  console.log(response.contents); */
-  const parser = new DOMParser();
-  return parser.parseFromString(response.contents, response.status.content_type).body;
 }
 var albumId;
 function parseToPhotoInfo(img) {
