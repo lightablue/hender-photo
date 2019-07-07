@@ -13,7 +13,9 @@ const albumParam = "mainid";
 const photoPage = "pt_show.asp";
 const photoParam = "pt_id";
 function getUrl(encodedUri) {
-    return `http://www.whateverorigin.org/get?url=${encodedUri}&callback=?`;
+    //const whateverorigin = "http://www.whateverorigin.org";
+    const whateverorigin = "https://whatever-origin.herokuapp.com";
+    return `${whateverorigin}/get?url=${encodedUri}&callback=?`;
 }
 function parseToBody(response) {
   /* console.log(response);
