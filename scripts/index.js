@@ -337,15 +337,9 @@ function openPhotoSwipe(index, galleryElement, disableAnimation, fromURL) {
     });
 
     gallery.listen('gettingData', function (index, item) {
-        if (useLargeImages) {
-            item.src = item.o.src;
-            item.w = item.o.w;
-            item.h = item.o.h;
-        } else {
-            item.src = item.m.src;
-            item.w = item.m.w;
-            item.h = item.m.h;
-        }
+        item.src = item.o.src;
+        item.w = item.o.w;
+        item.h = item.o.h;
     });
 
     gallery.init();
