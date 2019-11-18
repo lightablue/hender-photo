@@ -136,8 +136,8 @@ function parseThumbnailElements(el) {
         // create slide object
         item = {
             src: el.getAttribute('href'),
-            w: parseInt(size[0], 10),
-            h: parseInt(size[1], 10),
+            w: el.children[0].naturalWidth,
+            h: el.children[0].naturalHeight,
             author: el.getAttribute('data-author')
         };
 
