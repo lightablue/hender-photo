@@ -3,6 +3,7 @@ const timeline = document.createElement("DIV");
 timeline.setAttribute("class", "timeline");
 app.appendChild(timeline);
 const album = document.getElementById("album")
+const sheets = album.querySelector("#sheets")
 const schoolWebSite = "http://www.wces.tp.edu.tw";
 const classFolder = "/happy/102rainbow/";
 const viewerFolder = "photo/";
@@ -83,7 +84,7 @@ function addToAlbum(photoInfos) {
         flexbin.appendChild(anchor);
         anchor.appendChild(img);
     });
-    album.appendChild(flexbin);
+    sheets.appendChild(flexbin);
 }
 const callbackForFetchAlbum = function(response) {
     album.style.width = "100%";
@@ -96,7 +97,7 @@ function openAlbum(albumInfo) {
     $.getJSON(getUrl(encodedUri), callbackForFetchAlbum);
 }
 function returnToGallery() {
-    album.removeChild(album.querySelector(".flexbin"));
+    sheets.querySelector(".flexbin").remove();
     album.style.width = "0";
 }
 const callbackForFetchGallery = function(response) {
