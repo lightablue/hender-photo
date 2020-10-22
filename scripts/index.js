@@ -5,7 +5,8 @@ app.appendChild(timeline);
 const album = document.getElementById("album")
 const sheets = album.querySelector("#sheets")
 const schoolWebSite = "http://www.wces.tp.edu.tw";
-const classFolder = "/happy/102rainbow/";
+//const classFolder = "/happy/102rainbow/";
+const classFolder = "/happy/101sun/";
 const viewerFolder = "photo/";
 const fileFolder = "files/";
 const galleryPage = "pa_all.asp";
